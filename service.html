@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Services - School of ICT</title>
+    <style>
+        /* Shared Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: white;
+        }
+        
+         /* Top Section */
+        .top-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(45deg, #6a11cb, #2575fc); 
+            padding: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .top-section h1 {
+            margin: 0;
+            font-size: 48px; 
+        }
+
+        .top-section h4 {
+            margin: 0 0 0 10px;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .contact-info {
+            position: absolute;
+            right: 20px;
+            font-size: 16px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, #004e92, #000428);
+            padding: 15px;
+        }
+        
+        .logo img {
+            height: 75px;
+            width: 250px;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin-left: auto;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .nav-links a:hover {
+            background: #ffcc00;
+            color: #000;
+            box-shadow: 0 0 10px #ffcc00;
+        }
+
+        
+        /* Services Page Specific Styles */
+        .main-content {
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #ffcc00;
+            text-align: center;
+        }
+        
+        .service-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            padding: 12px 25px;
+            background: rgba(0, 0, 70, 0.5);
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .tab-button:hover {
+            background: rgba(255, 204, 0, 0.3);
+        }
+        
+        /* Hide all tab contents by default */
+        .tab-content {
+            display: none;
+            background: rgba(0, 0, 50, 0.7);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        /* Show the first tab by default */
+        #student:target,
+        #industry:target,
+        #community:target {
+            display: block;
+        }
+        
+        /* Style for the active tab button */
+        .service-tabs a.active .tab-button {
+            background: #58f540;
+            color: #000;
+        }
+        
+        .service-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .service-list li {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: rgba(0, 0, 70, 0.5);
+            border-left: 4px solid #ffcc00;
+        }
+
+        /* Footer Styles */
+        .below-footer {
+            background-color: #0b1549;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+        
+        .footer-column {
+            width: 30%;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column h3 {
+            color: #ffcc00;
+            border-bottom: 1px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-column ul li a {
+            color: #58f540;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 5px 0;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #ffcc00;
+            transform: translateX(5px);
+        }
+        
+        footer {
+            background: linear-gradient(90deg, #000428, #004e92);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-style: italic; 
+            font-weight: bold;
+        }
+        
+        /* Hide radio buttons */
+        input.tab-selector {
+            position: absolute;
+            opacity: 0;
+        }
+        
+        /* CSS-only tab switching */
+        .tab-content {
+            display: none;
+        }
+        
+        #tab1:checked ~ .main-content #student,
+        #tab2:checked ~ .main-content #industry,
+        #tab3:checked ~ .main-content #community {
+            display: block;
+        }
+        
+        #tab1:checked ~ .navbar ~ .main-content .service-tabs label[for="tab1"] .tab-button,
+        #tab2:checked ~ .navbar ~ .main-content .service-tabs label[for="tab2"] .tab-button,
+        #tab3:checked ~ .navbar ~ .main-content .service-tabs label[for="tab3"] .tab-button {
+            background: #58f540;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Radio buttons for tab selection (hidden) -->
+    <input type="radio" name="tabs" id="tab1" class="tab-selector" checked>
+    <input type="radio" name="tabs" id="tab2" class="tab-selector">
+    <input type="radio" name="tabs" id="tab3" class="tab-selector">
+    
+    <!-- Top Section -->
+    <section class="top-section">
+        <h1>SICT</h1>
+        <h4>School Of ICT | NIIBS</h4>
+        <div class="contact-info">
+             E-mail :<a href="mailto:itschool@niibs.edu.lk">itschool@niibs.edu.lk</a> &nbsp;&nbsp; T.P:<a href="tel:+94112904676">+94 11 2904 676</a>
+        </div>
+    </section>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Logo.webp" alt="School Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="service.html" class="active">Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1 class="page-title">Our Services</h1>
+        
+        <div class="service-tabs">
+            <label for="tab1">
+                <span class="tab-button">Student Services</span>
+            </label>
+            <label for="tab2">
+                <span class="tab-button">Industry Services</span>
+            </label>
+            <label for="tab3">
+                <span class="tab-button">Community Services</span>
+            </label>
+        </div>
+        
+        <div id="student" class="tab-content">
+            <h2>Student Support Services</h2>
+            <ul class="service-list">
+                <li><strong>Academic Counseling:</strong> Personalized guidance for course selection and career paths</li>
+                <li><strong>Internship Placement:</strong> Connections with leading tech companies for practical experience</li>
+                <li><strong>Research Support:</strong> Assistance with academic projects and access to research resources</li>
+                <li><strong>Technical Facilities:</strong> 24/7 access to computer labs and software resources</li>
+                <li><strong>Career Development:</strong> Workshops, resume building, and interview preparation</li>
+            </ul>
+        </div>
+        
+        <div id="industry" class="tab-content">
+            <h2>Industry Partnership Services</h2>
+            <ul class="service-list">
+                <li><strong>Corporate Training:</strong> Customized ICT training programs for your workforce</li>
+                <li><strong>Technology Consulting:</strong> Expert advice on digital transformation and IT solutions</li>
+                <li><strong>Research Collaboration:</strong> Joint projects with our faculty and students</li>
+                <li><strong>Talent Recruitment:</strong> Connect with our top graduates for your hiring needs</li>
+                <li><strong>Software Development:</strong> Collaborative projects with our development teams</li>
+            </ul>
+        </div>
+        
+        <div id="community" class="tab-content">
+            <h2>Community Outreach Services</h2>
+            <ul class="service-list">
+                <li><strong>Free ICT Workshops:</strong> Technology training for underprivileged communities</li>
+                <li><strong>School Programs:</strong> STEM education initiatives for local schools</li>
+                <li><strong>Non-Profit Support:</strong> Technology solutions for charitable organizations</li>
+                <li><strong>Public Seminars:</strong> Free educational events on emerging technologies</li>
+                <li><strong>Digital Literacy:</strong> Programs to bridge the digital divide in rural areas</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <section class="below-footer">
+        <div class="footer-container">
+            <!-- Quick Links Column (Added) -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Column -->
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>Email: itschool@niibs.edu.lk</p>
+                <p>Phone: +94 11 2904 676</p>
+                <p>Address: Manelwatta, Bollegala, Kelaniya</p>
+            </div>
+            
+            <!-- Follow Us Column -->
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 SICT. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

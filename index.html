@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School of ICT</title>
+    <style>
+        /* Basic styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: white;
+        }
+
+        /* Top Section */
+        .top-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(45deg, #6a11cb, #2575fc); 
+            padding: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .top-section h1 {
+            margin: 0;
+            font-size: 48px; 
+        }
+
+        .top-section h4 {
+            margin: 0 0 0 10px;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .contact-info {
+            position: absolute;
+            right: 20px;
+            font-size: 16px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, #004e92, #000428);
+            padding: 15px;
+            
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 75px; 
+            width: 250px;
+        }
+
+        .text-container {
+            color: white;
+            text-align: left;
+        }
+
+        .text-container h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .text-container h4 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin-left: auto;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            background: #ffcc00;
+            color: #000;
+            box-shadow: 0 0 10px #ffcc00;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(60deg, #29323c, #485563);
+            padding: 50px;
+            border-bottom: 5px solid #ffcc00;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+        }
+
+        .hero-text {
+            max-width: 500px;
+            text-align: left;
+            color: white;
+        }
+
+        .hero-text h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .apply-button {
+            display: inline-block;
+            background: #58f540;
+            color: #000;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .apply-button:hover {
+            background: #ff9900;
+            color: white;
+            box-shadow: 0 0 10px #ffcc00;
+        }
+
+        /* Welcome text section */
+        .welcome-text {
+            position: relative;
+            padding: 80px;
+            color: white;
+            text-align: justify;
+        }
+
+        .welcome-text video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; 
+        }
+
+        .welcome-text h1, .welcome-text p {
+            z-index: 1; 
+        }
+
+        .welcome-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Icon section */
+        .icon-section {
+            display: flex; 
+            justify-content: space-around; 
+            align-items: center; 
+            padding: 40px 0; 
+            background-color: #fff;
+        }
+
+        .icon-box {
+            text-align: center;
+        }
+
+        .icon-box img {
+            width: 50px;
+        }
+
+        .icon-box h3 {
+            color: #2d2d72; 
+            font-weight: bold;
+        }
+
+        .icon-box p {
+            color: gray;
+        }
+
+        /* About school section */
+        .about-school {
+            display: flex; 
+            height: 60vh; 
+            background-image: url('img.webp'); 
+            background-size: cover; 
+            background-position: center; 
+            padding: 20px;
+        }
+
+        .about-left {
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-start; 
+            align-items: flex-start; 
+            padding-right: 0px; 
+            padding-top:50px; 
+            padding-left:50px; 
+            background-color: rgba(0, 0, 150, 0.5);
+        }
+
+        .about-right {
+            flex: 1; 
+            padding-left: 0px; 
+            padding-top: 30px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-start; 
+            align-items: flex-start; 
+            color: white; 
+            background-color: rgba(0, 0, 150, 0.5);
+        }
+
+        .explore-btn {
+            font-size: 18px;
+            color: #ffffff;
+            text-decoration: none;
+            margin-top: 10px;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .explore-btn:hover {
+            color: #47f00a;
+            transform: scale(1.05);
+        }
+
+        /* Logo section */
+        .down-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 100px; 
+            padding: 10px;
+            background-color: #fff; 
+        }
+
+        .down-logo img {
+            height: 80px;
+            max-width: 150px;
+            object-fit: contain;
+        }
+
+        /* Footer section */
+        .below-footer {
+            background-color: #0b1549;
+            color: #fff;
+            padding: 40px 60px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .footer-left {
+            width: 30%;
+        }
+
+        .footer-logo {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
+        .footer-left p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons i {
+            font-size: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            color: #4caf50;
+        }
+
+        .footer-right {
+            display: flex;
+            width: 65%;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            width: 30%;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #4caf50;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #4caf50;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, #000428, #004e92);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-style: italic; 
+            font-weight: bold;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .down-logo {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .down-logo img {
+                height: 60px;
+                max-width: 120px;
+            }
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-left,
+            .footer-right {
+                width: 100%;
+                text-align: center;
+            }
+            .footer-right {
+                flex-direction: column;
+            }
+            .footer-column {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Section -->
+    <section class="top-section">
+        <h1>SICT</h1>
+        <h4>School Of ICT | NIIBS</h4>
+        <div class="contact-info">
+             E-mail :<a href="mailto:itschool@niibs.edu.lk">itschool@niibs.edu.lk</a> &nbsp;&nbsp; T.P:<a href="tel:+94112904676">+94 11 2904 676</a>
+        </div>
+    </section>
+    
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="Logo.webp" alt="School Logo">
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Welcome Text Section -->
+    <section class="welcome-text">
+        <video autoplay muted loop>
+            <source src="bgv.mp4" type="video/mp4"> 
+            Your browser does not support the video tag.
+        </video>
+        
+        <p> 
+            <span style="font-family: 'Times New Roman', serif; font-size: 24px; font-weight: bold;">
+                W&nbsp;e&nbsp;l&nbsp;c&nbsp;o&nbsp;m&nbsp;e&nbsp;&nbsp;&nbsp; t &nbsp;o
+            </span>
+            <br>
+            <span style="font-size: 48px; font-weight: bold; font-family: 'Times New Roman', Times, serif; background-color: #58f540; padding: 5px;">S&nbsp;I&nbsp;T&nbsp;C</span><br>
+        </p>
+
+        <p>
+            <span style="font-family: 'Times New Roman', Times, serif;background-color: yellow; color: black;"><b>School of Information Communication Technology (SITC)<b></span> <br>
+            <span style="font-family: 'Times New Roman', Times, serif;background-color: yellow; color: black;"><b>will foster lifelong learning, critical thinking, and partner with<b></span> <br>
+            <span style="font-family: 'Times New Roman', Times, serif;background-color: yellow; color: black;"><b>like-minded communities spanning the globe in furthering<b></span> <br>
+            <span style="font-family: 'Times New Roman', Times, serif;background-color: yellow; color: black;"><b>human endeavors that serve all mankind using science and<b></span> <br>
+            <span style="font-family: 'Times New Roman', Times, serif;background-color: yellow; color: black;"><b>technology behind Buddhist teaching and practices.<b></span>
+        </p>
+    </section>
+
+    <!-- Icon Section -->
+    <section class="icon-section">
+        <div class="icon-box">
+            <img src="icon-3.webp" alt="Government">
+            <h3>Government</h3>
+            <p>Recognition</p>
+        </div>
+
+        <div class="icon-box">
+            <img src="icon-1.webp" alt="Student">
+            <h3>Student</h3>
+            <p>Activities</p>
+        </div>
+
+        <div class="icon-box">
+            <img src="icon-2.webp" alt="Library">
+            <h3>Library</h3>
+            <p>Facilities</p>
+        </div>
+
+        <div class="icon-box">
+            <img src="icon-4.webp" alt="Fascinating">
+            <h3>Fascinating</h3>
+            <p>Environment</p>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="new.png" alt="SICT Campus">
+            </div>
+            
+            <div class="hero-text">
+                <h1>Study at SICT</h1>
+                <p>Apply for Courses at SICT</p>
+                <p>You can now directly enroll for any NIIBS course instantly by filling out an online admission form. 
+                   We will contact you for further information. Click on the following link to apply now!</p>
+                <a href="form.html" class="apply-button">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About School Section -->
+    <section id="about-school" class="about-school">
+        <div class="about-left">
+            <img src="logo.webp" alt="Logo" style="width: 400px; height: 100px;">
+            <p style="font-size: 30px; font-weight: bold; color: #47f00a; margin-top: 20px; margin-left: 70px;">About Our School</p>
+        </div>
+
+        <div class="about-right">
+            <p style="font-size: 18px; line-height: 1.5; max-width: 550px;">
+                School of Information Communication Technology (SICT) intends to create graduates who are experts in their respective fields but also honest, responsible, enthusiastic, assertive, emotionally mature, confident, and value professionalism.<br><br>
+
+                SICT will foster lifelong learning, critical thinking, and partner with like-minded communities spanning the globe in furthering human endeavors that serve all mankind using science and technology behind Buddhist teachings and practices.
+            </p>
+            <a href="about.html" class="explore-btn">Explore More →</a>
+        </div>
+    </section>
+
+    <!-- Logo Section -->
+    <section class="down-logo">
+        <img src="logo1.webp" alt="Logo 1">
+        <img src="logo2.webp" alt="Logo 2">
+        <img src="logo3.webp" alt="Logo 3">
+        <img src="logo4.webp" alt="Logo 4">
+        <img src="logo5.webp" alt="Logo 5">
+    </section>
+
+    <!-- Footer Section -->
+    <section class="below-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="Logo.webp" alt="SICT Logo" class="footer-logo">
+                <p>Nāgānanda International Institute for Buddhist Studies,<br>
+                    Manelwatta, Bollegala, Kelaniya,<br> Sri Lanka.</p>
+                <p><i class="fa-solid fa-envelope"></i> itschool@niibs.edu.lk</p>
+                <p><i class="fa-solid fa-phone"></i> +94 11 2904 676</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="#">About SICT</a></li>
+                        <li><a href="#">Vision & Mission</a></li>
+                        <li><a href="#">Resource Panel</a></li>
+                        <li><a href="#">Affiliations</a></li>
+                        <li><a href="#">ITEC Scholarship</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Campus Life</h3>
+                    <ul>
+                        <li><a href="#">Clubs & Societies</a></li>
+                        <li><a href="#">Campus Tour</a></li>
+                        <li><a href="#">Student Events</a></li>
+                        <li><a href="#">Apply To SICT</a></li>
+                        <li><a href="#">Downloads</a></li>
+                        <li><a href="#">LMS Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Academic</h3>
+                    <ul>
+                        <li><a href="#">Undergraduate Programmes</a></li>
+                        <li><a href="#">Diploma Programmes</a></li>
+                        <li><a href="#">Advanced Certificate Programmes</a></li>
+                        <li><a href="#">Certificate Programmes</a></li>
+                        <li><a href="#">Research</a></li>
+                        <li><a href="#">Student Handbook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copyright Footer -->
+    <footer>
+        <p>&copy; 2025 SICT. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

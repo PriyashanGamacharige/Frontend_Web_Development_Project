@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About - School of ICT</title>
+    <style>
+        /* Shared Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: white;
+        }
+        
+        /* Top Section */
+        .top-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(45deg, #6a11cb, #2575fc); 
+            padding: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .top-section h1 {
+            margin: 0;
+            font-size: 48px; 
+        }
+
+        .top-section h4 {
+            margin: 0 0 0 10px;
+            font-size: 18px;
+            font-weight: normal;
+        }
+        .contact-info {
+            position: absolute;
+            right: 20px;
+            font-size: 16px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, #004e92, #000428);
+            padding: 15px;
+        }
+        
+        .logo img {
+            height: 75px;
+            width: 250px;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin-left: auto;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .nav-links a:hover {
+            background: #ffcc00;
+            color: #000;
+            box-shadow: 0 0 10px #ffcc00;
+        }
+        
+        /* About Page Specific Styles */
+        .main-content {
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #ffcc00;
+            text-align: center;
+        }
+        
+        .content-section {
+            background: rgba(0, 0, 50, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .content-section.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .content-text {
+            flex: 1;
+        }
+        
+        .content-image {
+            flex: 1;
+            max-width: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        
+        .content-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .content-image img:hover {
+            transform: scale(1.05);
+        }
+        
+        .content-section h2 {
+            color: #58f540;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #000428, #004e92);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-style: italic; 
+            font-weight: bold;
+        }
+
+        
+        /* Footer Styles */
+        .below-footer, footer {
+            background-color: #0b1549;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+        
+        .footer-column {
+            width: 30%;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column h3 {
+            color: #ffcc00;
+            border-bottom: 1px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-column ul li a {
+            color: #58f540;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 5px 0;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #ffcc00;
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Section -->
+    <section class="top-section">
+        <h1>SICT</h1>
+        <h4>School Of ICT | NIIBS</h4>
+        <div class="contact-info">
+             E-mail :<a href="mailto:itschool@niibs.edu.lk">itschool@niibs.edu.lk</a> &nbsp;&nbsp; T.P:<a href="tel:+94112904676">+94 11 2904 676</a>
+        </div>
+    </section>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Logo.webp" alt="School Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1 class="page-title">About SICT</h1>
+        
+        <div class="content-section">
+            <div class="content-text">
+                <h2>Our History</h2>
+                <p>The School of Information Communication Technology (SICT) was established in 2010 as part of Nāgānanda International Institute for Buddhist Studies. We've grown to become a leading institution for ICT education in Sri Lanka, combining modern technology with Buddhist values.</p>
+                <p>From humble beginnings with just two programs, we now offer a comprehensive range of ICT qualifications that are recognized both nationally and internationally.</p>
+            </div>
+            <div class="content-image">
+                <img src="history.avif" alt="SICT History">
+            </div>
+        </div>
+        
+        <div class="content-section reverse">
+            <div class="content-text">
+                <h2>Our Mission</h2>
+                <p>To create graduates who are not only experts in their fields but also honest, responsible, and value professionalism. We foster lifelong learning and critical thinking while partnering with global communities through technology guided by Buddhist teachings.</p>
+                <p>We believe in education that transforms both the individual and society, creating technologists with strong ethical foundations.</p>
+            </div>
+            <div class="content-image">
+                <img src="mission.avif" alt="SICT Mission">
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <div class="content-text">
+                <h2>Our Facilities</h2>
+                <p>SICT boasts state-of-the-art computer labs, a comprehensive library with digital resources, modern lecture halls, and dedicated research spaces. Our campus provides a serene environment conducive to both learning and personal growth.</p>
+                <p>Students have access to high-performance computing facilities, specialized software, and high-speed internet throughout the campus.</p>
+            </div>
+            <div class="content-image">
+                <img src="facility.jpg" alt="SICT Facilities">
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <section class="below-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>Email: itschool@niibs.edu.lk</p>
+                <p>Phone: +94 11 2904 676</p>
+                <p>Address: Manelwatta, Bollegala, Kelaniya</p>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 SICT. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

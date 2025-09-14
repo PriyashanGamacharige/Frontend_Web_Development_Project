@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us - School of ICT</title>
+    <style>
+        /* Shared Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: white;
+        }
+        
+        /* Top Section */
+        .top-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(45deg, #6a11cb, #2575fc); 
+            padding: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .top-section h1 {
+            margin: 0;
+            font-size: 48px; 
+        }
+
+        .top-section h4 {
+            margin: 0 0 0 10px;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .top-contact-info {
+            position: absolute;
+            right: 20px;
+            font-size: 16px;
+        }
+
+        .top-contact-info a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .top-contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, #004e92, #000428);
+            padding: 15px;
+        }
+        
+        .logo img {
+            height: 75px;
+            width: 250px;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin-left: auto;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .nav-links a:hover {
+            background: #ffcc00;
+            color: #000;
+            box-shadow: 0 0 10px #ffcc00;
+        }
+        
+        /* Contact Page Specific Styles */
+        .main-content {
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #ffcc00;
+            text-align: center;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        /* Enhanced Location Section */
+        .contact-info {
+            background: rgba(0, 0, 50, 0.7);
+            padding: 30px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ffcc00, #58f540);
+        }
+        
+        .contact-info h2 {
+            color: #58f540;
+            margin-top: 0;
+            font-size: 28px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .contact-info h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #ffcc00;
+        }
+        
+        .contact-details {
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+        
+        .contact-icon {
+            margin-right: 15px;
+            color: #ffcc00;
+            font-size: 24px;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        .contact-text {
+            flex: 1;
+        }
+        
+        .contact-text h3 {
+            margin: 0 0 5px 0;
+            color: #58f540;
+            font-size: 18px;
+        }
+        
+        .contact-text p {
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        /* Map Container */
+        .map-container {
+            margin-top: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            height: 250px;
+            background: #000;
+            position: relative;
+        }
+        
+        .map-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: rgba(0, 0, 50, 0.7);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .contact-form h2 {
+            color: #58f540;
+            margin-top: 0;
+            font-size: 28px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .contact-form h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #ffcc00;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: none;
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #ffcc00;
+            background: white;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #58f540;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .submit-btn:hover {
+            background: #ffcc00;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+            transform: translateY(-2px);
+        }
+        
+       footer {
+            background: linear-gradient(90deg, #000428, #004e92);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-style: italic; 
+            font-weight: bold;
+        }
+
+        
+        /* Footer Styles */
+        .below-footer {
+            background-color: #0b1549;
+            color: white;
+            padding: 20px 0; /* Changed from padding: 20px to remove side padding */
+            text-align: center;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px; /* Add padding to container instead of section */
+        }
+        
+        .footer-column {
+            width: 30%;
+            margin-bottom: 20px;
+            padding: 0 10px; /* Add small padding between columns */
+        }
+        
+        .footer-column h3 {
+            color: #ffcc00;
+            border-bottom: 1px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-column ul li a {
+            color: #58f540;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 5px 0;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #ffcc00;
+            transform: translateX(5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-column {
+                width: 100%;
+                padding: 0 20px;
+            }
+            
+            .top-contact-info {
+                position: static;
+                margin-top: 10px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Section -->
+    <section class="top-section">
+        <h1>SICT</h1>
+        <h4>School Of ICT | NIIBS</h4>
+        <div class="top-contact-info">
+             E-mail :<a href="mailto:itschool@niibs.edu.lk">itschool@niibs.edu.lk</a> &nbsp;&nbsp; T.P:<a href="tel:+94112904676">+94 11 2904 676</a>
+        </div>
+    </section>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Logo.webp" alt="School Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="course.html">Courses</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1 class="page-title">Contact SICT</h1>
+        
+        <div class="contact-container">
+            <!-- Enhanced Location Section -->
+            <div class="contact-info">
+                <h2>Our Location</h2>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div class="contact-text">
+                            <h3>Address</h3>
+                            <p>Nāgānanda International Institute for Buddhist Studies,<br>
+                            Manelwatta, Bollegala, Kelaniya, Sri Lanka</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <p>+94 11 2904 676<br>
+                            <small>(Available 8:30 AM - 4:30 PM, Mon-Fri)</small></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>itschool@niibs.edu.lk<br>
+                            <small>(Typically respond within 24 hours)</small></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">🕒</span>
+                        <div class="contact-text">
+                            <h3>Office Hours</h3>
+                            <p>Monday - Friday: 8:30 AM - 4:30 PM<br>
+                            Saturday: 9:00 AM - 1:00 PM<br>
+                            Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <img src="map.png">
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="general">General Inquiry</option>
+                            <option value="admission">Admission</option>
+                            <option value="course">Course Information</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Type your message here..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Quick Links Footer Section -->
+        <section class="below-footer">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="course.html">Courses</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                     <p>Email: itschool@niibs.edu.lk</p>
+                     <p>Phone: +94 11 2904 676</p>
+                     <p>Address: Manelwatta, Bollegala, Kelaniya</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 SICT. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

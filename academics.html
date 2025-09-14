@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Academics - School of ICT</title>
+    <style>
+        /* Shared Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: white;
+        }
+        
+         /* Top Section */
+        .top-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(45deg, #6a11cb, #2575fc); 
+            padding: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .top-section h1 {
+            margin: 0;
+            font-size: 48px; 
+        }
+
+        .top-section h4 {
+            margin: 0 0 0 10px;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .contact-info {
+            position: absolute;
+            right: 20px;
+            font-size: 16px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, #004e92, #000428);
+            padding: 15px;
+        }
+        
+        .logo img {
+            height: 75px;
+            width: 250px;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin-left: auto;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .nav-links a:hover {
+            background: #ffcc00;
+            color: #000;
+            box-shadow: 0 0 10px #ffcc00;
+        }
+        
+        /* Hero Banner with Background Image */
+        .hero-banner {
+            background-image: url('backgrond.avif');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-text {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .hero-text h2 {
+            font-size: 42px;
+            color: #ffcc00;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-text p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Academics Page Specific Styles */
+        .main-content {
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #ffcc00;
+            text-align: center;
+        }
+        
+        .program-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .program-card {
+            background: rgba(0, 0, 50, 0.7);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        .program-card h3 {
+            color: #58f540;
+            margin-top: 0;
+            border-bottom: 1px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+        
+        .program-card ul {
+            padding-left: 20px;
+        }
+        
+        .program-card li {
+            margin-bottom: 8px;
+        }
+        
+        .program-details {
+            margin-top: 15px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .program-highlights {
+            background: rgba(255, 204, 0, 0.1);
+            padding: 10px;
+            border-left: 3px solid #ffcc00;
+            margin: 10px 0;
+        }
+        
+        .career-path {
+            font-style: italic;
+            color: #58f540;
+            margin-top: 10px;
+        }
+        
+        footer {
+            background: linear-gradient(90deg, #000428, #004e92);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-style: italic; 
+            font-weight: bold;
+        }
+
+        
+        /* Footer Styles */
+        .below-footer {
+            background-color: #0b1549;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-column {
+            width: 30%;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column h3 {
+            color: #ffcc00;
+            border-bottom: 1px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-column ul li a {
+            color: #58f540;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 5px 0;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #ffcc00;
+            transform: translateX(5px);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Top Section -->
+    <section class="top-section">
+        <h1>SICT</h1>
+        <h4>School Of ICT | NIIBS</h4>
+        <div class="contact-info">
+             E-mail :<a href="mailto:itschool@niibs.edu.lk">itschool@niibs.edu.lk</a> &nbsp;&nbsp; T.P:<a href="tel:+94112904676">+94 11 2904 676</a>
+        </div>
+    </section>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Logo.webp" alt="School Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="academics.html" class="active">Academics</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Banner with Background Image -->
+    <section class="hero-banner">
+        <div class="hero-text">
+            <h2>Explore Our Academic Programs</h2>
+            <p>Discover a world of opportunities with our cutting-edge ICT programs designed to prepare you for the digital future</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1 class="page-title">Academic Programs</h1>
+        
+        <div class="program-list">
+            <!-- Undergraduate Programs -->
+            <div class="program-card">
+                <h3>Undergraduate Programs</h3>
+                <ul>
+                    <li><strong>BSc in Information Technology (4 years)</strong></li>
+                </ul>
+                <div class="program-details">
+                    <p>Our flagship program provides comprehensive training in software development, systems analysis, and IT project management. Students gain hands-on experience with modern technologies through our industry partnerships.</p>
+                    <div class="program-highlights">
+                        <strong>Key Features:</strong> Specializations in Cloud Computing or Mobile Development, Industry certifications included, 6-month internship program
+                    </div>
+                    <p class="career-path">Career Paths: Software Developer, IT Consultant, Systems Analyst, Project Manager</p>
+                </div>
+                
+                <ul>
+                    <li><strong>BSc in Computer Science (4 years)</strong></li>
+                </ul>
+                <div class="program-details">
+                    <p>A rigorous program focusing on algorithms, data structures, and computational theory. Prepares students for advanced research or high-performance computing careers.</p>
+                    <div class="program-highlights">
+                        <strong>Key Features:</strong> Advanced mathematics foundation, AI and machine learning electives, Research opportunities from year 2
+                    </div>
+                    <p class="career-path">Career Paths: Software Engineer, Data Scientist, Research Scientist, Algorithm Specialist</p>
+                </div>
+                
+                <ul>
+                    <li><strong>BSc in Data Science (4 years)</strong></li>
+                </ul>
+                <div class="program-details">
+                    <p>Combines statistics, computer science, and business intelligence to create experts in extracting insights from big data.</p>
+                    <div class="program-highlights">
+                        <strong>Key Features:</strong> Access to our Big Data Lab, Real-world datasets for projects, Industry-standard tools (Hadoop, Spark, TensorFlow)
+                    </div>
+                    <p class="career-path">Career Paths: Data Analyst, Business Intelligence Specialist, Machine Learning Engineer</p>
+                </div>
+                
+                <ul>
+                    <li><strong>BSc in Cyber Security (4 years)</strong></li>
+                </ul>
+                <div class="program-details">
+                    <p>Develops expertise in protecting digital assets and infrastructure from cyber threats through ethical hacking, digital forensics, and security architecture.</p>
+                    <div class="program-highlights">
+                        <strong>Key Features:</strong> Certified Ethical Hacker (CEH) preparation, Cyber range for realistic training, Partnerships with security firms
+                    </div>
+                    <p class="career-path">Career Paths: Security Analyst, Penetration Tester, Chief Information Security Officer</p>
+                </div>
+            </div>
+            
+            <!-- Postgraduate Programs -->
+            <div class="program-card">
+                <h3>Postgraduate Programs</h3>
+                <ul>
+                    <li><strong>MSc in Information Technology (2 years)</strong></li>
+                </ul>
+                <div class="program-details">
+                    <p>Advanced study of enterprise IT systems, emerging technologies, and strategic IT management for professionals seeking leadership roles.</p>
+                    <div class="program-highlights">
+                        <strong>Key Features:</strong> Evening/weekend classes for working professionals, Capstone project with industry mentor, Focus on digital transformation
+                    </div>
+                    <p class="career-path">Career Paths: IT Director, Chief Technology Officer, Solutions Architect</p>
+                </div>
+                
+                <ul>
+                    <li><strong>MSc in Artificial Intelligence (2 years)</strong></li>
+                </ul>
+                <div class="program-details">
+                    <p>Cutting-edge program covering machine learning, neural networks, and cognitive computing with applications across industries.</p>
+                    <div class="program-highlights">
+                        <strong>Key Features:</strong> Access to GPU computing cluster, Research partnerships with AI labs, Specializations in Computer Vision or NLP
+                    </div>
+                    <p class="career-path">Career Paths: AI Engineer, Machine Learning Specialist, Robotics Programmer</p>
+                </div>
+                
+                <ul>
+                    <li><strong>PhD in Computer Science (3-5 years)</strong></li>
+                </ul>
+                <div class="program-details">
+                    <p>Research-intensive program for those pursuing academic careers or advanced industrial research positions.</p>
+                    <div class="program-highlights">
+                        <strong>Key Features:</strong> Individualized research plans, International collaboration opportunities, Teaching assistantships available
+                    </div>
+                    <p class="career-path">Career Paths: University Professor, Research Scientist, Chief Innovation Officer</p>
+                </div>
+            </div>
+            
+            <!-- Diploma Programs -->
+            <div class="program-card">
+                <h3>Diploma Programs</h3>
+                <ul>
+                    <li><strong>Diploma in Software Engineering (2 years)</strong></li>
+                </ul>
+                <div class="program-details">
+                    <p>Practical training in full-stack development, software testing, and agile methodologies for immediate industry entry.</p>
+                    <div class="program-highlights">
+                        <strong>Key Features:</strong> Project-based learning, Portfolio development, Industry-aligned curriculum updated annually
+                    </div>
+                    <p class="career-path">Career Paths: Junior Developer, QA Engineer, DevOps Technician</p>
+                </div>
+                
+                <ul>
+                    <li><strong>Diploma in Network Engineering (2 years)</strong></li>
+                </ul>
+                <div class="program-details">
+                    <p>Comprehensive training in network design, implementation, and security for enterprise environments.</p>
+                    <div class="program-highlights">
+                        <strong>Key Features:</strong> Cisco Networking Academy partner, CCNA preparation, Hands-on lab with enterprise equipment
+                    </div>
+                    <p class="career-path">Career Paths: Network Administrator, Systems Engineer, Cloud Network Specialist</p>
+                </div>
+                
+                <ul>
+                    <li><strong>Diploma in Web Development (1 year)</strong></li>
+                </ul>
+                <div class="program-details">
+                    <p>Intensive program covering modern web technologies and frameworks for front-end and back-end development.</p>
+                    <div class="program-highlights">
+                        <strong>Key Features:</strong> MERN stack focus, Responsive design principles, 3-month internship included
+                    </div>
+                    <p class="career-path">Career Paths: Web Developer, UI/UX Developer, Front-end Engineer</p>
+                </div>
+            </div>
+            
+            <!-- Certificate Programs -->
+            <div class="program-card">
+                <h3>Certificate Programs</h3>
+                <ul>
+                    <li><strong>Certificate in Programming (6 months)</strong></li>
+                </ul>
+                <div class="program-details">
+                    <p>Foundational programming skills in Python and JavaScript with introduction to algorithms and problem-solving.</p>
+                    <div class="program-highlights">
+                        <strong>Key Features:</strong> Beginner-friendly, Project portfolio creation, Pathway to diploma programs
+                    </div>
+                    <p class="career-path">Career Paths: Junior Programmer, Technical Support Specialist</p>
+                </div>
+                
+                <ul>
+                    <li><strong>Certificate in Database Management (6 months)</strong></li>
+                </ul>
+                <div class="program-details">
+                    <p>Practical skills in database design, SQL, and administration using MySQL, Oracle, and MongoDB.</p>
+                    <div class="program-highlights">
+                        <strong>Key Features:</strong> Real-world database projects, Performance optimization techniques, Data modeling fundamentals
+                    </div>
+                    <p class="career-path">Career Paths: Database Administrator, Data Analyst, BI Developer</p>
+                </div>
+                
+                <ul>
+                    <li><strong>Certificate in UI/UX Design (6 months)</strong></li>
+                </ul>
+                <div class="program-details">
+                    <p>Comprehensive training in user-centered design principles, prototyping tools, and usability testing.</p>
+                    <div class="program-highlights">
+                        <strong>Key Features:</strong> Adobe XD and Figma training, Design thinking methodology, Portfolio development
+                    </div>
+                    <p class="career-path">Career Paths: UI Designer, UX Researcher, Interaction Designer</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <section class="below-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>Email: itschool@niibs.edu.lk</p>
+                <p>Phone: +94 11 2904 676</p>
+                <p>Address: Manelwatta, Bollegala, Kelaniya</p>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+       <p>&copy; 2025 SICT. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
